@@ -7,7 +7,7 @@ from film;
 
 -- Ejercicio 2
 
-SELECT title, rating
+SELECT title -- , rating
 FROM film
 WHERE rating = 'PG-13';
 
@@ -19,7 +19,7 @@ WHERE description LIKE '%amazing%';
 
 -- Ejercicio 4
 
-SELECT title, length
+SELECT title -- , length
 FROM film
 WHERE length > 120;
 
@@ -87,7 +87,7 @@ WHERE f.title = 'Indian Love';
 
 -- Ejercicio 14 
 
-SELECT title, description
+SELECT title -- , description
 FROM film
 WHERE description LIKE '%dog%' OR description LIKE '%cat%';
 
@@ -101,13 +101,13 @@ FROM film_actor);
 
 -- Ejercicio 16 
 
-SELECT title, release_year
+SELECT title -- , release_year
 FROM film
 WHERE release_year BETWEEN 2005 AND 2010;
 
 -- Ejercicio 17
 
-SELECT f.title, c.name
+SELECT f.title -- , c.name
 FROM film f
 INNER JOIN film_category z ON f.film_id = z.film_id
 INNER JOIN category c ON z.category_id = c.category_id
@@ -123,7 +123,7 @@ HAVING COUNT(y.film_id) > 10;
 
 -- Ejercicio 19
 
-SELECT title, rating, length
+SELECT title -- , rating, length
 FROM film
 WHERE rating = 'R' AND length > 120;
 
