@@ -146,13 +146,13 @@ HAVING COUNT(y.film_id) >= 5;
 
 -- Ejercicio 22
 
-SELECT film.title
-FROM film
-WHERE film.film_id IN (
-    SELECT DISTINCT inventory.film_id
-    FROM rental
-    INNER JOIN inventory ON rental.inventory_id = inventory.inventory_id
-    WHERE rental.return_date > DATE_ADD(rental.rental_date, INTERVAL 5 DAY)
+SELECT f.title
+FROM film f
+WHERE f.film_id IN (
+    SELECT i.film_id
+    FROM rental r
+    INNER JOIN inventory i ON r.inventory_id = i.inventory_id
+    WHERE DATEDIFF(r.return_date, r.rental_date) > 5
 );
 
 
